@@ -15,6 +15,6 @@ public class CheckPremiums extends BaseTest {
 		Elements.meret();
 		Elements.rendezes();
 		Elements.scrollDown();
-		Functions.fetchProducts(10000);
+		Functions.fetchProducts(12000);
 	}
 }
