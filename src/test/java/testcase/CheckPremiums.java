@@ -10,6 +10,7 @@ public class CheckPremiums extends BaseTest {
 
 	@Test
 	public static void checkPoloShirts() throws InterruptedException {
+		Elements.acceptCookies();
 		Elements.premium();
 		Elements.poloingek();
 		Elements.meret();

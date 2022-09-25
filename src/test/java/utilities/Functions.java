@@ -17,8 +17,8 @@ public class Functions extends BaseTest {
 
 	public static void fetchProducts(int price) {
 
-		List<WebElement> list_of_products = driver.findElements(By.xpath("//p[@data-testid='brandName']"));
-		List<WebElement> list_of_products_price = driver.findElements(By.xpath("//span[@data-testid='finalPrice']"));
+		List<WebElement> list_of_products = driver.findElements(By.xpath(loc.getProperty("brandName")));
+		List<WebElement> list_of_products_price = driver.findElements(By.xpath(loc.getProperty("finalPrice")));
 
 		// Use of HashMaop to store Products and Their prices(after conversion to
 		// Integer)
