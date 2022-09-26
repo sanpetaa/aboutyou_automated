@@ -10,6 +10,7 @@ import java.util.Set;
 
 import javax.imageio.ImageIO;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -17,6 +18,7 @@ import org.testng.Assert;
 import org.testng.Reporter;
 
 import base.BaseTest;
+import io.netty.handler.codec.base64.Base64;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.coordinates.WebDriverCoordsProvider;
@@ -89,14 +91,12 @@ public class Functions extends BaseTest {
 
 					WebElement element = driver
 							.findElement(By.xpath("//*[@aria-label='Term\u00E9kek']/div/ul/li["+row+"]/a"));
-					//*[@aria-label='Term\u00E9kek']/div/ul/li
 
 					Screenshot Screenshot = new AShot().coordsProvider(new WebDriverCoordsProvider())
 							.takeScreenshot(driver, element);
 					ImageIO.write(Screenshot.getImage(), "png",
 							new File(System.getProperty("user.dir") + "\\screenshots\\Screenshot_"+row+".png"));
 				}
-			
 			}
 		}
 	}
