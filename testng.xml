@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="testcase.CheckPremiums"/>
+      <class name="categories.PremiumPoloShirts"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
