@@ -86,8 +86,9 @@ public class Functions extends BaseTest {
 			Assert.fail();} 
 			else {
 				for (int row = 1; row <= count; row++) {
+
 					WebElement element = driver
-							.findElement(By.xpath("//*[@aria-label='Termékek']/div/ul/li["+row+"]/a"));
+							.findElement(By.xpath("//*[@aria-label='Term\\u00E9kek']/div/ul/li["+row+"]/a"));
 
 					Screenshot Screenshot = new AShot().coordsProvider(new WebDriverCoordsProvider())
 							.takeScreenshot(driver, element);
