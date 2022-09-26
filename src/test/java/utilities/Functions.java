@@ -10,7 +10,6 @@ import java.util.Set;
 
 import javax.imageio.ImageIO;
 
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -18,7 +17,6 @@ import org.testng.Assert;
 import org.testng.Reporter;
 
 import base.BaseTest;
-import io.netty.handler.codec.base64.Base64;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.coordinates.WebDriverCoordsProvider;
@@ -67,8 +65,8 @@ public class Functions extends BaseTest {
 			// Low price is
 			int low_price = array_list_values_product_prices.get(0);
 
-			Reporter.log("\nHighest price: " + high_price + " Product: " + map_final_products.get(high_price), true);
-			Reporter.log("Lowest price: " + low_price + " Product: " + map_final_products.get(low_price)+ "\n", true);
+			Reporter.log("\nHighest price: " + high_price + ",-HUF. " + " Product: " + map_final_products.get(high_price), true);
+			Reporter.log("Lowest price: " + low_price + ",-HUF. " + " Product: " + map_final_products.get(low_price)+ "\n", true);
 
 			int count = 0;
 			for (int i = 0; array_list_values_product_prices.get(i) < array_list_values_product_prices
@@ -84,7 +82,7 @@ public class Functions extends BaseTest {
 			}
 
 			if (count == 0) {
-				System.out.println("\nNem találtunk " + price + " alatt terméket.\n\n");
+				System.out.println("\nWe didn't find any product below " + price + ",-HUF\n");
 
 				Assert.fail();
 			} else {
