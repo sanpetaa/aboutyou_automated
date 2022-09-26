@@ -68,7 +68,7 @@ local.properties
 .sts4-cache/
 
 test-output/
-screenshots/
+screenshot/
 
 # End of https://www.toptal.com/developers/gitignore/api/eclipse
 /target/
