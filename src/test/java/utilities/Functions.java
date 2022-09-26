@@ -1,22 +1,35 @@
 package utilities;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
+import javax.imageio.ImageIO;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.Reporter;
 
 import base.BaseTest;
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
+import ru.yandex.qatools.ashot.coordinates.WebDriverCoordsProvider;
 
 public class Functions extends BaseTest {
 
-	public static void fetchProducts(int price) {
+	public static void scrollDown() throws InterruptedException {
+		driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
+	}
 
+	public static void fetchProducts(int price) throws InterruptedException, IOException {
+
+		Thread.sleep(1500);
 		List<WebElement> list_of_products = driver.findElements(By.xpath(loc.getProperty("brandName")));
 		List<WebElement> list_of_products_price = driver.findElements(By.xpath(loc.getProperty("finalPrice")));
 
@@ -59,20 +72,30 @@ public class Functions extends BaseTest {
 			for (int i = 0; array_list_values_product_prices.get(i) < array_list_values_product_prices
 					.get(array_list_values_product_prices.size() - 1); i++) {
 				if (array_list_values_product_prices.get(i) <= price) {
-					Reporter.log(
-							"\nVan termék " + price + " HUF alatt: " + array_list_values_product_prices.get(i) + " HUF,"
-									+ " Termék: " + map_final_products.get(array_list_values_product_prices.get(i)) + "\n\n",
-							true);
+					Reporter.log("\nVan termék " + price + " HUF alatt: " + array_list_values_product_prices.get(i)
+							+ " HUF," + " Termék: " + map_final_products.get(array_list_values_product_prices.get(i))
+							+ "\n\n", true);
 					count++;
-				} else;
-			}
-			if (count == 0) {
-				System.out.println("\nNem találtunk " +price+ " alatt terméket.\n\n");
-				Assert.fail();
+				} else
+					;
 			}
 
+			if (count == 0) 
+			{System.out.println("\nNem találtunk " + price + " alatt terméket.\n\n");
+			
+			Assert.fail();} 
+			else {
+				for (int row = 1; row <= count; row++) {
+					WebElement element = driver
+							.findElement(By.xpath("//*[@aria-label='Termékek']/div/ul/li["+row+"]/a"));
+
+					Screenshot Screenshot = new AShot().coordsProvider(new WebDriverCoordsProvider())
+							.takeScreenshot(driver, element);
+					ImageIO.write(Screenshot.getImage(), "png",
+							new File(System.getProperty("user.dir") + "\\screenshots\\Screenshot_"+row+".png"));
+				}
+			
+			}
 		}
-
 	}
-
 }

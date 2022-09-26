@@ -1,5 +1,7 @@
 package testcase;
 
+import java.io.IOException;
+
 import org.testng.annotations.Test;
 
 import base.BaseTest;
@@ -9,13 +11,13 @@ import utilities.Functions;
 public class CheckPremiums extends BaseTest {
 
 	@Test
-	public static void checkPoloShirts() throws InterruptedException {
+	public static void checkPoloShirts() throws InterruptedException, IOException {
 		Elements.acceptCookies();
 		Elements.premium();
 		Elements.poloingek();
 		Elements.meret();
 		Elements.rendezes();
-		Elements.scrollDown();
-		Functions.fetchProducts(10000);
+		//Functions.scrollDown();
+		Functions.fetchProducts(15000);
 	}
 }

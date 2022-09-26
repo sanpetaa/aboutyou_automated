@@ -3,7 +3,6 @@ package utilities;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -43,8 +42,4 @@ public class Elements extends BaseTest {
 		element2.click();
 	}
 
-	public static void scrollDown() throws InterruptedException {
-		driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
-		
-	}
 }
