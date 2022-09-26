@@ -18,6 +18,6 @@ public class PremiumPoloShirts extends BaseTest {
 		Elements.meret();
 		Elements.rendezes();
 		//Functions.scrollDown();
-		Functions.fetchProducts(14000);
+		Functions.fetchProducts(10000);
 	}
 }
