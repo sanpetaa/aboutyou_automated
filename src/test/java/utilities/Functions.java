@@ -40,7 +40,7 @@ public class Functions extends BaseTest {
 		String product_name;
 		String product_price;
 		int int_product_price;
-		HashMap<Integer, String> map_final_products = new HashMap<Integer, String>();
+		HashMap<Integer, String> map_final_products = new HashMap<>();
 		{
 
 			for (int i = 0; i < list_of_products.size(); i++) {
@@ -52,7 +52,7 @@ public class Functions extends BaseTest {
 				map_final_products.put(int_product_price, product_name);// Add product and price in HashMap
 			}
 
-			Reporter.log("\n\nÁr/ termék: " + map_final_products.toString(), true);
+			Reporter.log("\nAll the prices and products we found: " + map_final_products.toString(), true);
 
 			// Get all the keys from Hash Map
 			Set<Integer> allkeys = map_final_products.keySet();
@@ -67,35 +67,36 @@ public class Functions extends BaseTest {
 			// Low price is
 			int low_price = array_list_values_product_prices.get(0);
 
-			Reporter.log("\nLegmagasabb ár: " + high_price + " Termék:" + map_final_products.get(high_price), true);
-			Reporter.log("Legalacsonyabb ár: " + low_price + " Termék: " + map_final_products.get(low_price), true);
+			Reporter.log("\nHighest price: " + high_price + " Product: " + map_final_products.get(high_price), true);
+			Reporter.log("Lowest price: " + low_price + " Product: " + map_final_products.get(low_price)+ "\n", true);
 
 			int count = 0;
 			for (int i = 0; array_list_values_product_prices.get(i) < array_list_values_product_prices
 					.get(array_list_values_product_prices.size() - 1); i++) {
 				if (array_list_values_product_prices.get(i) <= price) {
-					Reporter.log("\nVan termék " + price + " HUF alatt: " + array_list_values_product_prices.get(i)
-							+ " HUF," + " Termék: " + map_final_products.get(array_list_values_product_prices.get(i))
-							+ "\n\n", true);
+					Reporter.log("We found a product for " + price + ",-HUF. " + " The product is: "
+							+ map_final_products.get(array_list_values_product_prices.get(i)) + " Actual Price: "
+							+ array_list_values_product_prices.get(i) + ",-HUF,", true);
+
 					count++;
 				} else
 					;
 			}
 
-			if (count == 0) 
-			{System.out.println("\nNem találtunk " + price + " alatt terméket.\n\n");
-			
-			Assert.fail();} 
-			else {
+			if (count == 0) {
+				System.out.println("\nNem találtunk " + price + " alatt terméket.\n\n");
+
+				Assert.fail();
+			} else {
 				for (int row = 1; row <= count; row++) {
 
 					WebElement element = driver
-							.findElement(By.xpath("//*[@aria-label='Term\u00E9kek']/div/ul/li["+row+"]/a"));
+							.findElement(By.xpath("//*[@aria-label='Term\u00E9kek']/div/ul/li[" + row + "]/a"));
 
 					Screenshot Screenshot = new AShot().coordsProvider(new WebDriverCoordsProvider())
 							.takeScreenshot(driver, element);
 					ImageIO.write(Screenshot.getImage(), "png",
-							new File(System.getProperty("user.dir") + "\\screenshots\\Screenshot_"+row+".png"));
+							new File(System.getProperty("user.dir") + "\\screenshots\\Screenshot_" + row + ".png"));
 				}
 			}
 		}
