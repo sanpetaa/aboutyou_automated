@@ -11,7 +11,6 @@ import java.util.Set;
 import javax.imageio.ImageIO;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -23,9 +22,6 @@ import ru.yandex.qatools.ashot.coordinates.WebDriverCoordsProvider;
 
 public class Functions extends BaseTest {
 
-	public static void scrollDown() throws InterruptedException {
-		driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
-	}
 
 	public static void fetchProducts(int price) throws InterruptedException, IOException {
 
@@ -65,8 +61,12 @@ public class Functions extends BaseTest {
 			// Low price is
 			int low_price = array_list_values_product_prices.get(0);
 
-			Reporter.log("\nHighest price: " + high_price + ",-HUF. " + " Product: " + map_final_products.get(high_price), true);
-			Reporter.log("Lowest price: " + low_price + ",-HUF. " + " Product: " + map_final_products.get(low_price)+ "\n", true);
+			Reporter.log(
+					"\nHighest price: " + high_price + ",-HUF. " + " Product: " + map_final_products.get(high_price),
+					true);
+			Reporter.log(
+					"Lowest price: " + low_price + ",-HUF. " + " Product: " + map_final_products.get(low_price) + "\n",
+					true);
 
 			int count = 0;
 			for (int i = 0; array_list_values_product_prices.get(i) < array_list_values_product_prices
@@ -88,9 +88,13 @@ public class Functions extends BaseTest {
 			} else {
 				for (int row = 1; row <= count; row++) {
 
-					WebElement element = driver
-							.findElement(By.xpath("//*[@aria-label='Term\u00E9kek']/div/ul/li[" + row + "]/a"));
-
+					// WebElement element =
+					// driver.findElement(By.xpath("//*[@aria-label='Term\u00E9kek']/div/ul/li[" +
+					// row + "]/a"));
+					WebElement element = driver.findElement(By.xpath(
+							"//html/body/main/div[2]/div[3]/section/div[2]/section/section[2]/div[1]/ul/li["+ row + "]/a/div[1]/img"));
+					//*html/body/main/div[2]/div[3]/section/div[2]/section/section[2]/div[1]/ul/li["+ row + "]/a/div[1]/img
+					//*[@id="@aboutyou/router::SCROLL_ANCHOR"]/div[2]/section/section[2]/div[1]/ul/li[1]/a/div[2]/img
 					Screenshot Screenshot = new AShot().coordsProvider(new WebDriverCoordsProvider())
 							.takeScreenshot(driver, element);
 					ImageIO.write(Screenshot.getImage(), "png",
