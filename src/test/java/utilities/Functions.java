@@ -74,7 +74,7 @@ public class Functions extends BaseTest {
 				if (array_list_values_product_prices.get(i) <= price) {
 					Reporter.log("We found a product for " + price + ",-HUF. " + " The product is: "
 							+ map_final_products.get(array_list_values_product_prices.get(i)) + " Actual Price: "
-							+ array_list_values_product_prices.get(i) + ",-HUF,", true);
+							+ array_list_values_product_prices.get(i) + ",-HUF,"+ "\n", true);
 
 					count++;
 				} else
@@ -93,8 +93,6 @@ public class Functions extends BaseTest {
 					// row + "]/a"));
 					WebElement element = driver.findElement(By.xpath(
 							"//html/body/main/div[2]/div[3]/section/div[2]/section/section[2]/div[1]/ul/li["+ row + "]/a/div[1]/img"));
-					//*html/body/main/div[2]/div[3]/section/div[2]/section/section[2]/div[1]/ul/li["+ row + "]/a/div[1]/img
-					//*[@id="@aboutyou/router::SCROLL_ANCHOR"]/div[2]/section/section[2]/div[1]/ul/li[1]/a/div[2]/img
 					Screenshot Screenshot = new AShot().coordsProvider(new WebDriverCoordsProvider())
 							.takeScreenshot(driver, element);
 					ImageIO.write(Screenshot.getImage(), "png",

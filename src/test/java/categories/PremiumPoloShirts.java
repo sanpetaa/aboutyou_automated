@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import base.BaseTest;
 import utilities.Elements;
 import utilities.Functions;
+import utilities.Moves;
 
 public class PremiumPoloShirts extends BaseTest {
 
@@ -17,6 +18,7 @@ public class PremiumPoloShirts extends BaseTest {
 		Elements.poloingek();
 		Elements.polomeret();
 		Elements.rendezes();
+		Moves.scrollHome();
 		Functions.fetchProducts(10000);
 	}
 }
