@@ -24,6 +24,5 @@ public class PremiumPoloShirts extends BaseTest {
 		Functions.fetchProducts(10000);
 		ConsoleOutput.consoleOutputParse();
 		ConsoleOutput.consoleOutputCopy();
-		ConsoleOutput.assertAll();
 	}
 }

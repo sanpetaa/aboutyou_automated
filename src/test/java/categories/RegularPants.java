@@ -24,7 +24,6 @@ public class RegularPants extends BaseTest {
 		Functions.fetchProducts(4000);
 		ConsoleOutput.consoleOutputParse();
 		ConsoleOutput.consoleOutputCopy();
-		ConsoleOutput.assertAll();
 	}
 
 }

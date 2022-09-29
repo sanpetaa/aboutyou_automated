@@ -101,6 +101,7 @@ public class Functions extends BaseTest {
 							new File(System.getProperty("user.dir") + "\\screenshots\\Screenshot_" + row + ".png"));
 				}
 			}
+			ConsoleOutput.assertAll();
 		}
 	}
 }

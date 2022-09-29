@@ -66,6 +66,7 @@ public class ConsoleOutput extends BaseTest {
 			reader2.close();
 
 		}
+		ConsoleOutput.assertAll();
 	}
 	
 
