@@ -41,7 +41,7 @@ public class BaseTest {
 			driver = new ChromeDriver();
 			driver.get(prop.getProperty("url"));
 		} else if (prop.getProperty("browser").equalsIgnoreCase("edge")) {
-			WebDriverManager.firefoxdriver().setup();
+			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 			driver.get(prop.getProperty("url"));
 		}

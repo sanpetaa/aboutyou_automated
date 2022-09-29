@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
+import utilities.ConsoleOutput;
 import utilities.Elements;
 import utilities.Functions;
 import utilities.Moves;
@@ -19,7 +20,11 @@ public class RegularPants extends BaseTest {
 		Elements.nadragmeret();
 		Elements.rendezes();
 		Moves.scrollHome();
-		Functions.fetchProducts(10000);
+		ConsoleOutput.consoleOutputNEW();
+		Functions.fetchProducts(4000);
+		ConsoleOutput.consoleOutputParse();
+		ConsoleOutput.consoleOutputCopy();
+		ConsoleOutput.assertAll();
 	}
 
 }

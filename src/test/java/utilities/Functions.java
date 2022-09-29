@@ -12,8 +12,8 @@ import javax.imageio.ImageIO;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.asserts.SoftAssert;
 
 import base.BaseTest;
 import ru.yandex.qatools.ashot.AShot;
@@ -24,6 +24,8 @@ public class Functions extends BaseTest {
 
 
 	public static void fetchProducts(int price) throws InterruptedException, IOException {
+		
+		SoftAssert softassert = new SoftAssert();
 
 		Thread.sleep(1500);
 		List<WebElement> list_of_products = driver.findElements(By.xpath(loc.getProperty("brandName")));
@@ -72,7 +74,7 @@ public class Functions extends BaseTest {
 			for (int i = 0; array_list_values_product_prices.get(i) < array_list_values_product_prices
 					.get(array_list_values_product_prices.size() - 1); i++) {
 				if (array_list_values_product_prices.get(i) <= price) {
-					Reporter.log("We found a product for " + price + ",-HUF. " + " The product is: "
+					Reporter.log("We found a product for less than " + price + ",-HUF. " + " The product is: "
 							+ map_final_products.get(array_list_values_product_prices.get(i)) + " Actual Price: "
 							+ array_list_values_product_prices.get(i) + ",-HUF,"+ "\n", true);
 
@@ -82,17 +84,17 @@ public class Functions extends BaseTest {
 			}
 
 			if (count == 0) {
-				System.out.println("\nWe didn't find any product below " + price + ",-HUF\n");
-
-				Assert.fail();
+				System.out.println("\nWe didn't find any product anymore for you below " + price + ",-HUF\n");
+				softassert.assertNotEquals(count,0);
+				
 			} else {
 				for (int row = 1; row <= count; row++) {
 
 					// WebElement element =
-					// driver.findElement(By.xpath("//*[@aria-label='Term\u00E9kek']/div/ul/li[" +
-					// row + "]/a"));
-					WebElement element = driver.findElement(By.xpath(
-							"//html/body/main/div[2]/div[3]/section/div[2]/section/section[2]/div[1]/ul/li["+ row + "]/a/div[1]/img"));
+					// driver.findElement(By.xpath("//*[@aria-label='Term\u00E9kek']/div/ul/li[" + row + "]/a"));
+					WebElement element = driver.findElement(
+							By.xpath("//*[@aria-label='Term\u00E9kek']/div/ul/li[" + row + "]"));
+					////*[@aria-label='Term\u00E9kek']/div/ul/li[" + row + "]
 					Screenshot Screenshot = new AShot().coordsProvider(new WebDriverCoordsProvider())
 							.takeScreenshot(driver, element);
 					ImageIO.write(Screenshot.getImage(), "png",
