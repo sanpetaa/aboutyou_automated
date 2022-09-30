@@ -20,6 +20,7 @@ public class PremiumPoloShirts extends BaseTest {
 		Elements.polomeret();
 		Elements.rendezes();
 		Moves.scrollHome();
+		ConsoleOutput.consoleOutputOLD();
 		ConsoleOutput.consoleOutputNEW();
 		Functions.fetchProducts(10000);
 		ConsoleOutput.consoleOutputParse();

@@ -20,8 +20,9 @@ public class RegularPants extends BaseTest {
 		Elements.nadragmeret();
 		Elements.rendezes();
 		Moves.scrollHome();
+		ConsoleOutput.consoleOutputOLD();
 		ConsoleOutput.consoleOutputNEW();
-		Functions.fetchProducts(4000);
+		Functions.fetchProducts(6000);
 		ConsoleOutput.consoleOutputParse();
 		ConsoleOutput.consoleOutputCopy();
 	}

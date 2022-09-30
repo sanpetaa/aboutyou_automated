@@ -14,9 +14,9 @@ import org.testng.asserts.SoftAssert;
 import base.BaseTest;
 
 public class ConsoleOutput extends BaseTest {
-	
+
 	static SoftAssert softassert = new SoftAssert();
-	
+
 	public static void assertAll() {
 		softassert.assertAll();
 	}
@@ -33,7 +33,7 @@ public class ConsoleOutput extends BaseTest {
 
 			boolean areEqual = true;
 
-			//int lineNum = 1;
+			// int lineNum = 1;
 
 			while (line1 != null || line2 != null) {
 				if (line1 == null || line2 == null) {
@@ -50,15 +50,17 @@ public class ConsoleOutput extends BaseTest {
 
 				line2 = reader2.readLine();
 
-				//lineNum++;
+				// lineNum++;
 			}
 
 			if (areEqual) {
 				softassert.assertTrue(false);
-				//System.out.println("Two files have same content.");
+				// System.out.println("Two files have same content.");
 			} else {
-				//System.out.println("Two files have different content. They differ at line " + lineNum);
-				//System.out.println("File1 has " + line1 + " and File2 has " + line2 + " at line " + lineNum);
+				// System.out.println("Two files have different content. They differ at line " +
+				// lineNum);
+				// System.out.println("File1 has " + line1 + " and File2 has " + line2 + " at
+				// line " + lineNum);
 			}
 
 			reader1.close();
@@ -68,7 +70,12 @@ public class ConsoleOutput extends BaseTest {
 		}
 		ConsoleOutput.assertAll();
 	}
-	
+
+	public static void consoleOutputOLD() throws IOException {
+
+		File file = new File("consoleOutputOLD.txt");
+		file.createNewFile();
+	}
 
 	public static void consoleOutputNEW() throws FileNotFoundException {
 
