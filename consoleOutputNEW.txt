@@ -1,9 +1,0 @@
-
-All the prices and products we found: {20720=BOGGI MILANO, 11490=BARBOUR INTERNATIONAL, 13490=J.LINDEBERG, 15490=BOSS GREEN, 19490=LA MARTINA, 21990=HUGO, 16490=JOOP! JEANS, 18490=BOSS GREEN, 20490=CALVIN KLEIN, 18990=JOOP! JEANS}
-
-Highest price: 21990,-HUF.  Product: HUGO
-Lowest price: 11490,-HUF.  Product: BARBOUR INTERNATIONAL
-
-
-We didn't find any product anymore for you below 10000,-HUF
-
