@@ -22,7 +22,7 @@ public class RegularPants extends BaseTest {
 		Moves.scrollHome();
 		ConsoleOutput.consoleOutputOLD();
 		ConsoleOutput.consoleOutputNEW();
-		Functions.fetchProducts(6000);
+		Functions.fetchProducts(4000);
 		ConsoleOutput.consoleOutputParse();
 		ConsoleOutput.consoleOutputCopy();
 	}
