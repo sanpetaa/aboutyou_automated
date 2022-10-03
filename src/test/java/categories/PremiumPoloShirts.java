@@ -22,7 +22,7 @@ public class PremiumPoloShirts extends BaseTest {
 		Moves.scrollHome();
 		ConsoleOutput.consoleOutputOLD();
 		ConsoleOutput.consoleOutputNEW();
-		Functions.fetchProducts(10000);
+		Functions.fetchProducts(15000);
 		ConsoleOutput.consoleOutputParse();
 		ConsoleOutput.consoleOutputCopy();
 	}

@@ -72,18 +72,22 @@ public class Functions extends BaseTest {
 			// map_final_products.get(high_price),true);
 			// Reporter.log("Lowest price: " + low_price + ",-HUF. " + " Product: " +
 			// map_final_products.get(low_price) + "\n",true);
-
+			
 			int count = 0;
+			int href_count = 1;
 			for (int i = 0; array_list_values_product_prices.get(i) < array_list_values_product_prices
 					.get(array_list_values_product_prices.size() - 1); i++) {
 				if (array_list_values_product_prices.get(i) <= price) {
+					WebElement product_link = driver.findElement(By.xpath(".//*[@aria-label='Term\u00E9kek']/div/ul/li[" + href_count + "]/a"));
+					String href = product_link.getAttribute("href");
 					Reporter.log(
-							"We found a product for less than " + price + ",-HUF. " + " The product is: "
+							"We found a product for less than " + price + ",-HUF. " + " which is: "
 									+ map_final_products.get(array_list_values_product_prices.get(i))
-									+ " Actual Price: " + array_list_values_product_prices.get(i) + ",-HUF," + "\n",
+									+ " Price: " + array_list_values_product_prices.get(i) + ",-HUF," + "\n" + "The product link is: " + href +  "\n",
 							true);
 
 					count++;
+					href_count++;
 				} else
 					;
 			}
@@ -95,6 +99,7 @@ public class Functions extends BaseTest {
 			} else {
 				//save the jpg
 				for (int row = 1; row <= count; row++) {
+
 					WebElement product_image = driver.findElement(
 							By.xpath(".//*[@aria-label='Term\u00E9kek']/div/ul/li[" + row + "]/a/div/img"));
 					String srcset = product_image.getAttribute("srcset");
