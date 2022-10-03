@@ -26,5 +26,4 @@ public class RegularPants extends BaseTest {
 		ConsoleOutput.consoleOutputParse();
 		ConsoleOutput.consoleOutputCopy();
 	}
-
 }

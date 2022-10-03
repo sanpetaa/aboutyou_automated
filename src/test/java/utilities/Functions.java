@@ -1,7 +1,9 @@
 package utilities;
 
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -22,9 +24,8 @@ import ru.yandex.qatools.ashot.coordinates.WebDriverCoordsProvider;
 
 public class Functions extends BaseTest {
 
-
 	public static void fetchProducts(int price) throws InterruptedException, IOException {
-		
+
 		SoftAssert softassert = new SoftAssert();
 
 		Thread.sleep(1500);
@@ -48,7 +49,9 @@ public class Functions extends BaseTest {
 				map_final_products.put(int_product_price, product_name);// Add product and price in HashMap
 			}
 
-			Reporter.log("\nAll the prices and products we found: " + map_final_products.toString(), true);
+			// write out all the products we found
+			// Reporter.log("\nAll the prices and products we found: " +
+			// map_final_products.toString(), true);
 
 			// Get all the keys from Hash Map
 			Set<Integer> allkeys = map_final_products.keySet();
@@ -58,25 +61,27 @@ public class Functions extends BaseTest {
 			Collections.sort(array_list_values_product_prices);
 
 			// Highest Product is
-			int high_price = array_list_values_product_prices.get(array_list_values_product_prices.size() - 1);
+			// int high_price =
+			// array_list_values_product_prices.get(array_list_values_product_prices.size()
+			// - 1);
 
 			// Low price is
-			int low_price = array_list_values_product_prices.get(0);
+			// int low_price = array_list_values_product_prices.get(0);
 
-			Reporter.log(
-					"\nHighest price: " + high_price + ",-HUF. " + " Product: " + map_final_products.get(high_price),
-					true);
-			Reporter.log(
-					"Lowest price: " + low_price + ",-HUF. " + " Product: " + map_final_products.get(low_price) + "\n",
-					true);
+			// Reporter.log("\nHighest price: " + high_price + ",-HUF. " + " Product: " +
+			// map_final_products.get(high_price),true);
+			// Reporter.log("Lowest price: " + low_price + ",-HUF. " + " Product: " +
+			// map_final_products.get(low_price) + "\n",true);
 
 			int count = 0;
 			for (int i = 0; array_list_values_product_prices.get(i) < array_list_values_product_prices
 					.get(array_list_values_product_prices.size() - 1); i++) {
 				if (array_list_values_product_prices.get(i) <= price) {
-					Reporter.log("We found a product for less than " + price + ",-HUF. " + " The product is: "
-							+ map_final_products.get(array_list_values_product_prices.get(i)) + " Actual Price: "
-							+ array_list_values_product_prices.get(i) + ",-HUF,"+ "\n", true);
+					Reporter.log(
+							"We found a product for less than " + price + ",-HUF. " + " The product is: "
+									+ map_final_products.get(array_list_values_product_prices.get(i))
+									+ " Actual Price: " + array_list_values_product_prices.get(i) + ",-HUF," + "\n",
+							true);
 
 					count++;
 				} else
@@ -84,6 +89,27 @@ public class Functions extends BaseTest {
 			}
 
 			if (count == 0) {
+				System.out.println("\nWe didn't find any product anymore for you below " + price + ",-HUF\n");
+				softassert.assertNotEquals(count, 0);
+
+			} else {
+				//save the jpg
+				for (int row = 1; row <= count; row++) {
+					WebElement product_image = driver.findElement(
+							By.xpath(".//*[@aria-label='Term\u00E9kek']/div/ul/li[" + row + "]/a/div/img"));
+					String srcset = product_image.getAttribute("srcset");
+					URL imageURL = new URL(srcset);
+					BufferedImage saveImage = ImageIO.read(imageURL);
+					ImageIO.write(saveImage, "png",
+							new File(System.getProperty("user.dir") + "\\screenshots\\screenshot_" + row + ".png"));
+				}
+			}
+			ConsoleOutput.assertAll();
+		}
+		
+		//take a screenshot//old part of the code 
+		/*
+		  			if (count == 0) {
 				System.out.println("\nWe didn't find any product anymore for you below " + price + ",-HUF\n");
 				softassert.assertNotEquals(count,0);
 				
@@ -103,5 +129,6 @@ public class Functions extends BaseTest {
 			}
 			ConsoleOutput.assertAll();
 		}
+		*/
 	}
 }
