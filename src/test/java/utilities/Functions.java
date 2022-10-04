@@ -23,7 +23,7 @@ public class Functions extends BaseTest {
 		SoftAssert softassert = new SoftAssert();
 	
 		//thread sleep in order to see all the data
-		Thread.sleep(250);
+		Thread.sleep(2000);
 		
 		//get elements into a list
 		List<WebElement> list_of_products = driver.findElements(By.xpath(loc.getProperty("brandName")));
