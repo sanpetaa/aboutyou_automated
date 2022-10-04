@@ -8,7 +8,6 @@ import base.BaseTest;
 import utilities.ConsoleOutput;
 import utilities.Elements;
 import utilities.Functions;
-import utilities.Moves;
 
 public class PremiumPoloShirts extends BaseTest {
 
@@ -19,7 +18,6 @@ public class PremiumPoloShirts extends BaseTest {
 		Elements.poloingek();
 		Elements.polomeret();
 		Elements.rendezes();
-		Moves.scrollHome();
 		ConsoleOutput.consoleOutputOLD();
 		ConsoleOutput.consoleOutputNEW();
 		Functions.fetchProducts(15000);
