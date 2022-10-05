@@ -72,3 +72,4 @@ local.properties
 /consoleOutputNEW.txt
 /consoleOutputOLD.txt
 /target/
+/lib

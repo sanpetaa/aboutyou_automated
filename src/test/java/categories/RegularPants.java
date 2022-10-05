@@ -8,7 +8,6 @@ import base.BaseTest;
 import utilities.ConsoleOutput;
 import utilities.Elements;
 import utilities.Functions;
-import utilities.Moves;
 
 public class RegularPants extends BaseTest {
 
@@ -17,12 +16,13 @@ public class RegularPants extends BaseTest {
 		Elements.acceptCookies();
 		Elements.ruhazat();
 		Elements.nadragok();
+		Elements.meret();
 		Elements.nadragmeret();
+		Elements.akcios();
 		Elements.rendezes();
-		Moves.scrollHome();
 		ConsoleOutput.consoleOutputOLD();
 		ConsoleOutput.consoleOutputNEW();
-		Functions.fetchProducts(4000);
+		Functions.fetchProducts(5000);
 		ConsoleOutput.consoleOutputParse();
 		ConsoleOutput.consoleOutputCopy();
 	}
