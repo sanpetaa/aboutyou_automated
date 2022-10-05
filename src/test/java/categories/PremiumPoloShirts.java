@@ -5,9 +5,9 @@ import java.io.IOException;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
+import elements.Elements;
+import functions.Functions;
 import utilities.ConsoleOutput;
-import utilities.Elements;
-import utilities.Functions;
 
 public class PremiumPoloShirts extends BaseTest {
 

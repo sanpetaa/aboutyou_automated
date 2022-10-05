@@ -5,10 +5,10 @@ import java.io.IOException;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
+import elements.Elements;
+import elements.ElementsBrandSearch;
+import functions.FunctionsBrandSearch;
 import utilities.ConsoleOutput;
-import utilities.Elements;
-import utilities.ElementsBrandSearch;
-import utilities.FunctionsBrandSearch;
 
 public class BrandRalphLauren  extends BaseTest{
 
