@@ -19,6 +19,12 @@ public class Elements extends BaseTest {
 		element.click();
 	}
 	
+	public static void ferfi() throws InterruptedException {
+		WebElement element = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("ferfi"))));
+		element.click();
+	}
+	
 	public static void markak() throws InterruptedException {
 		WebElement element = wait
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("markak"))));
@@ -75,7 +81,7 @@ public class Elements extends BaseTest {
 		WebElement element2 = wait
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("huvelyk32"))));
 		element2.click();
-		WebElement element3 = wait
+		/*WebElement element3 = wait
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("szarhossz30"))));
 		element3.click();
 		WebElement element4 = wait
@@ -83,7 +89,7 @@ public class Elements extends BaseTest {
 		element4.click();
 		WebElement element5 = wait
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("szarhossz32"))));
-		element5.click();
+		element5.click();*/
 	}
 	
 

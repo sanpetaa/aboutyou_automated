@@ -14,6 +14,7 @@ public class PremiumPoloShirts extends BaseTest {
 	@Test
 	public static void premiumPoloShirts() throws InterruptedException, IOException {
 		Elements.acceptCookies();
+		Elements.ferfi();
 		Elements.premium();
 		Elements.poloingek();
 		Elements.meret();

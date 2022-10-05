@@ -9,12 +9,12 @@ import elements.Elements;
 import functions.Functions;
 import utilities.ConsoleOutput;
 
-public class RegularPants extends BaseTest {
+public class RegularAny extends BaseTest{
 
 	@Test
 	public static void regularPants() throws InterruptedException, IOException {
+		
 		Elements.acceptCookies();
-		Elements.ferfi();
 		Elements.ruhazat();
 		Elements.nadragok();
 		Elements.meret();
@@ -23,8 +23,9 @@ public class RegularPants extends BaseTest {
 		Elements.rendezes();
 		ConsoleOutput.consoleOutputOLD();
 		ConsoleOutput.consoleOutputNEW();
-		Functions.fetchProducts(4000);
+		Functions.fetchProducts(5000);
 		ConsoleOutput.consoleOutputParse();
 		ConsoleOutput.consoleOutputCopy();
 	}
+	
 }

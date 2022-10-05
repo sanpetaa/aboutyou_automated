@@ -15,6 +15,7 @@ public class BrandRalphLauren  extends BaseTest{
 	@Test
 	public static void brandRalphLauren() throws InterruptedException, IOException {
 		Elements.acceptCookies();
+		Elements.ferfi();
 		Elements.markak();
 		ElementsBrandSearch.poloRalphLauren();
 		ElementsBrandSearch.brandSearchMeret();
