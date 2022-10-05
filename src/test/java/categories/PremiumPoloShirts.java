@@ -16,11 +16,13 @@ public class PremiumPoloShirts extends BaseTest {
 		Elements.acceptCookies();
 		Elements.premium();
 		Elements.poloingek();
-		Elements.polomeret();
+		Elements.meret();
+		Elements.M();
+		Elements.akcios();
 		Elements.rendezes();
 		ConsoleOutput.consoleOutputOLD();
 		ConsoleOutput.consoleOutputNEW();
-		Functions.fetchProducts(15000);
+		Functions.fetchProducts(10000);
 		ConsoleOutput.consoleOutputParse();
 		ConsoleOutput.consoleOutputCopy();
 	}

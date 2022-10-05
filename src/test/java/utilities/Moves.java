@@ -10,12 +10,12 @@ public class Moves extends BaseTest {
 
 	public static void scrollDown() throws InterruptedException {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,5000)");
+		jse.executeScript("window.scrollBy(0,250)");
 	}
 	
 	public static void scrollUp() throws InterruptedException {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,-5000)");
+		jse.executeScript("window.scrollBy(0,-250)");
 	}
 
 	public static void scrollEnd() throws InterruptedException {
