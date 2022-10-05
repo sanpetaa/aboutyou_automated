@@ -25,7 +25,7 @@ public class BrandRalphLauren  extends BaseTest{
 		ElementsBrandSearch.brandSearchAkcios();
 		ConsoleOutput.consoleOutputOLD();
 		ConsoleOutput.consoleOutputNEW();
-		FunctionsBrandSearch.fetchProductsBrandSearch(25000);
+		FunctionsBrandSearch.fetchProductsBrandSearch(12000);
 		ConsoleOutput.consoleOutputParse();
 		ConsoleOutput.consoleOutputCopy();
 	}

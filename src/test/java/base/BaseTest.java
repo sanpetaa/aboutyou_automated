@@ -6,7 +6,9 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -38,12 +40,29 @@ public class BaseTest {
 		// open browsers
 		if (prop.getProperty("browser").equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+
+			// run as headless edge
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200",
+					"--ignore-certificate-errors", "--disable-extensions", "--no-sandbox", "--disable-dev-shm-usage");
+			
+			driver = new ChromeDriver(options);
 			driver.get(prop.getProperty("url"));
+			
+
 		} else if (prop.getProperty("browser").equalsIgnoreCase("edge")) {
 			WebDriverManager.edgedriver().setup();
-			driver = new EdgeDriver();
+	
+			// run as headless edge
+			EdgeOptions options = new EdgeOptions();
+			options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200",
+					"--ignore-certificate-errors", "--disable-extensions", "--no-sandbox", "--disable-dev-shm-usage");
+			
+			//options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200",
+			//		"--ignore-certificate-errors", "--disable-extensions", "--no-sandbox", "--disable-dev-shm-usage");
+			driver = new EdgeDriver(options);
 			driver.get(prop.getProperty("url"));
+
 		}
 
 		// To maximize the browser window
