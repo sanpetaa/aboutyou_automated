@@ -4,26 +4,28 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
+
 import base.BaseTest;
 import elements.Elements;
-import functions.Functions;
+import functions.FetchProductLast30DaysPrice;
 import utilities.ConsoleOutput;
 
 public class RegularAny extends BaseTest{
 
 	@Test
-	public static void regularPants() throws InterruptedException, IOException {
+	public static void regularAny() throws InterruptedException, IOException {
 		
 		Elements.acceptCookies();
+		Elements.ferfi();
 		Elements.ruhazat();
-		Elements.nadragok();
 		Elements.meret();
+		Elements.M();
 		Elements.nadragmeret();
 		Elements.akcios();
-		Elements.rendezes();
+		Elements.rendezesLegnagyobbAkciok();
 		ConsoleOutput.consoleOutputOLD();
 		ConsoleOutput.consoleOutputNEW();
-		Functions.fetchProducts(5000);
+		FetchProductLast30DaysPrice.fetchProductLast30DaysPrice(20000);
 		ConsoleOutput.consoleOutputParse();
 		ConsoleOutput.consoleOutputCopy();
 	}

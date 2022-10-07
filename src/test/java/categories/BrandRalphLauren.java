@@ -7,10 +7,10 @@ import org.testng.annotations.Test;
 import base.BaseTest;
 import elements.Elements;
 import elements.ElementsBrandSearch;
-import functions.FunctionsBrandSearch;
+import functions.FetchProductPriceforBrands;
 import utilities.ConsoleOutput;
 
-public class BrandRalphLauren  extends BaseTest{
+public class BrandRalphLauren extends BaseTest {
 
 	@Test
 	public static void brandRalphLauren() throws InterruptedException, IOException {
@@ -21,12 +21,11 @@ public class BrandRalphLauren  extends BaseTest{
 		ElementsBrandSearch.brandSearchMeret();
 		ElementsBrandSearch.brandSearchM();
 		ElementsBrandSearch.brandSearchCipoMeret();
-		ElementsBrandSearch.brandSearchRendezes();
-		ElementsBrandSearch.brandSearchAr();
 		ElementsBrandSearch.brandSearchAkcios();
+		ElementsBrandSearch.brandSearchRendezesLegalacsonyabbAr();
 		ConsoleOutput.consoleOutputOLD();
 		ConsoleOutput.consoleOutputNEW();
-		FunctionsBrandSearch.fetchProductsBrandSearch(12000);
+		FetchProductPriceforBrands.fetchProductPriceforBrands(12500);
 		ConsoleOutput.consoleOutputParse();
 		ConsoleOutput.consoleOutputCopy();
 	}

@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import base.BaseTest;
 import elements.Elements;
-import functions.Functions;
+import functions.FetchProductPrice;
 import utilities.ConsoleOutput;
 
 public class RegularPants extends BaseTest {
@@ -20,10 +20,10 @@ public class RegularPants extends BaseTest {
 		Elements.meret();
 		Elements.nadragmeret();
 		Elements.akcios();
-		Elements.rendezes();
+		Elements.rendezesLegalacsonyabbAr();
 		ConsoleOutput.consoleOutputOLD();
 		ConsoleOutput.consoleOutputNEW();
-		Functions.fetchProducts(4000);
+		FetchProductPrice.fetchProductPrice(4000);
 		ConsoleOutput.consoleOutputParse();
 		ConsoleOutput.consoleOutputCopy();
 	}

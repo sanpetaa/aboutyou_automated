@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import base.BaseTest;
 import elements.Elements;
-import functions.Functions;
+import functions.FetchProductPrice;
 import utilities.ConsoleOutput;
 
 public class PremiumPoloShirts extends BaseTest {
@@ -20,10 +20,10 @@ public class PremiumPoloShirts extends BaseTest {
 		Elements.meret();
 		Elements.M();
 		Elements.akcios();
-		Elements.rendezes();
+		Elements.rendezesLegalacsonyabbAr();
 		ConsoleOutput.consoleOutputOLD();
 		ConsoleOutput.consoleOutputNEW();
-		Functions.fetchProducts(10000);
+		FetchProductPrice.fetchProductPrice(10000);
 		ConsoleOutput.consoleOutputParse();
 		ConsoleOutput.consoleOutputCopy();
 	}
