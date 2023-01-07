@@ -1,4 +1,4 @@
-package categories.premiumPoloShirts;
+package categories;
 
 import java.io.IOException;
 

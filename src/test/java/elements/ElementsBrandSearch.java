@@ -50,7 +50,9 @@ public class ElementsBrandSearch extends BaseTest {
 	public static void brandSearchMeret() throws InterruptedException {
 		WebElement element = wait
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("brandSearchmeret"))));
+		Thread.sleep(1000);
 		element.click();
+		Thread.sleep(500);
 	}
 
 	public static void brandSearchM() throws InterruptedException {
