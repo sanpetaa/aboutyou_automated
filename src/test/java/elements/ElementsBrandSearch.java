@@ -22,7 +22,6 @@ public class ElementsBrandSearch extends BaseTest {
 		WebElement element = wait
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("polo_ralph_lauren"))));
 		element.click();
-		Thread.sleep(10000);
 	}
 
 	public static void brandSearchRendezesLegalacsonyabbAr() throws InterruptedException {
@@ -47,7 +46,6 @@ public class ElementsBrandSearch extends BaseTest {
 	}
 
 	public static void brandSearchMeret() throws InterruptedException {
-		Thread.sleep(10000);
 		WebElement element = wait
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("brandSearchmeret"))));
 		element.click();
