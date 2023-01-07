@@ -1,4 +1,4 @@
-package categories;
+package categories.premiumPoloShirts;
 
 import java.io.IOException;
 
@@ -9,10 +9,10 @@ import elements.Elements;
 import functions.FetchProductPrice;
 import utilities.ConsoleOutput;
 
-public class PremiumPoloShirts extends BaseTest {
+public class PremiumPoloShirtsLowestPrice extends BaseTest {
 
-	@Test
-	public static void premiumPoloShirts() throws InterruptedException, IOException {
+@Test
+	public static void premiumPoloShirtsLowestPrice() throws InterruptedException, IOException {
 		Elements.acceptCookies();
 		Elements.ferfi();
 		Elements.premium();

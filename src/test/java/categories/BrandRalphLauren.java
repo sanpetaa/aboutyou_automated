@@ -17,6 +17,7 @@ public class BrandRalphLauren extends BaseTest {
 		Elements.acceptCookies();
 		Elements.ferfi();
 		Elements.markak();
+		Elements.clickAway();
 		ElementsBrandSearch.poloRalphLauren();
 		ElementsBrandSearch.brandSearchMeret();
 		ElementsBrandSearch.brandSearchM();

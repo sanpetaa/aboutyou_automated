@@ -44,6 +44,8 @@ public class FetchProductPrice extends BaseTest {
 		for (int i = 0; i < list_of_products.size(); i++) {
 			product_name = list_of_products.get(i).getText();// Iterate and fetch product name
 			product_price = list_of_products_price.get(i).getText();// Iterate and fetch product price
+			product_price = product_price.replaceAll("[^0-9]", "");// Replace anything will space other than numbers
+			int_product_price = Integer.parseInt(product_price);// Convert to Integer
 			// get product link one by one
 			product_link = list_of_products_link.get(i).getAttribute("href");
 			String href_product_link = product_link;

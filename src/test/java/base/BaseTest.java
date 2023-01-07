@@ -44,9 +44,9 @@ public class BaseTest {
 			// run as headless edge
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200",
-					"--ignore-certificate-errors", "--disable-extensions", "--no-sandbox", "--disable-dev-shm-usage");
+				"--ignore-certificate-errors", "--disable-extensions", "--no-sandbox", "--disable-dev-shm-usage");
 
-			driver = new ChromeDriver(options);
+			driver = new ChromeDriver();
 			driver.get(prop.getProperty("url"));
 
 		} else if (prop.getProperty("browser").equalsIgnoreCase("edge")) {
