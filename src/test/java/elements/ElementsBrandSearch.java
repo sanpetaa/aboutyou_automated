@@ -22,15 +22,18 @@ public class ElementsBrandSearch extends BaseTest {
 		WebElement element = wait
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("polo_ralph_lauren"))));
 		element.click();
+		Thread.sleep(1000);
 	}
 
 	public static void brandSearchRendezesLegalacsonyabbAr() throws InterruptedException {
 		WebElement element = wait
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("brandSearchrendezes"))));
 		element.click();
+		Thread.sleep(1000);
 		WebElement element2 = wait
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("legalacsonyabb_ar"))));
 		element2.click();
+		Thread.sleep(1000);
 	}
 
 	public static void brandSearchCipoMeret() throws InterruptedException {
@@ -52,7 +55,7 @@ public class ElementsBrandSearch extends BaseTest {
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("brandSearchmeret"))));
 		Thread.sleep(1000);
 		element.click();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 	}
 
 	public static void brandSearchM() throws InterruptedException {
