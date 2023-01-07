@@ -22,18 +22,16 @@ public class ElementsBrandSearch extends BaseTest {
 		WebElement element = wait
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("polo_ralph_lauren"))));
 		element.click();
-		Thread.sleep(1000);
+		Thread.sleep(10000);
 	}
 
 	public static void brandSearchRendezesLegalacsonyabbAr() throws InterruptedException {
 		WebElement element = wait
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("brandSearchrendezes"))));
 		element.click();
-		Thread.sleep(1000);
 		WebElement element2 = wait
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("legalacsonyabb_ar"))));
 		element2.click();
-		Thread.sleep(1000);
 	}
 
 	public static void brandSearchCipoMeret() throws InterruptedException {
@@ -41,21 +39,17 @@ public class ElementsBrandSearch extends BaseTest {
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("brandSearch43"))));
 		element1.click();
 		isChecked = element1.findElement(By.xpath(loc.getProperty("brandSearch43"))).isSelected();
-
 		WebElement element2 = wait
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("brandSearch43.5"))));
 		element2.click();
 		isChecked = element2.findElement(By.xpath(loc.getProperty("brandSearch43.5"))).isSelected();
-		Thread.sleep(1000);
 		waitForPageLoad();
 	}
 
 	public static void brandSearchMeret() throws InterruptedException {
 		WebElement element = wait
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("brandSearchmeret"))));
-		Thread.sleep(1000);
 		element.click();
-		Thread.sleep(1000);
 	}
 
 	public static void brandSearchM() throws InterruptedException {
